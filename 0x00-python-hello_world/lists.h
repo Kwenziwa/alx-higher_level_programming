@@ -5,21 +5,21 @@
 
 /**
  * struct listint_s - singly linked list
- * @num: integer
- * @nxt: points to the next node
+ * @n: integer
+ * @next: points to the next node
  *
  * Description: singly linked list node structure
- * for Holberton project
+ * 
  */
 typedef struct listint_s
 {
-	int num;
-	struct listint_s *nxt;
+    int n;
+    struct listint_s *next;
 } listint_t;
 
-listint_t *add_nodeint(listint_t **hd, const int num);
-int check_cycle(listint_t *lst);
-void free_listint(listint_t *hd);
-size_t print_listint(const listint_t *hh);
+size_t print_listint(const listint_t *h);
+listint_t *add_nodeint(listint_t **head, const int n);
+void free_listint(listint_t *head);
+int check_cycle(listint_t *list);
 
 #endif /* LISTS_H */
