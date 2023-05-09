@@ -16,4 +16,3 @@ elif number == DigitEnum.ZERO:
     print("{} is zero".format(number))
 else:
     print("{} is negative".format(number))
-
