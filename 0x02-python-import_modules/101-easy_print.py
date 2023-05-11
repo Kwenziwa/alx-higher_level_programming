@@ -1,24 +1,13 @@
 #!/usr/bin/python3
-if __name__ == "__main__":
-    from sys import argv
-    from calculator_1 import add, sub, mul, div
-    argc = len(argv)
-    if argc != 4:
-        print('Usage: {} <a> <operator> <b>'.format(argv[0]))
-        exit(1)
-    ops = {
-        '+': add,
-        '-': sub,
-        '*': mul,
-        '/': div
-    }
-    if argv[2] in ops:
-        num1 = int(argv[1])
-        num2 = int(argv[3])
-        op = ops[argv[2]]
-        result = op(num1, num2)
-        print('{:d} {:s} {:d} = {:d}'.format(num1, argv[2], num2, result))
+from magic_calculation_102 import add, sub
+
+
+def magic_calculation(num1, num2):
+    if num1 < num2:
+        c = add(num1, num2)
+        for i in range(4, 6):
+            c = add(c, i)
+        return (c)
     else:
-        print('Unknown operator. Available operators: +, -, * and /')
-        exit(1)
-    exit(0)
+        return sub(num1, num2)
+
