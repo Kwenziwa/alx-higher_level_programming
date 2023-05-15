@@ -1,10 +1,12 @@
 #!/usr/bin/python3
 # 10-divisible_by_2.py
-def max_integer(mylist=[]):
-    if len(mylist) == 0:
-        return ("None")
-    v = mylist[0]
-    for i in mylist:
-        if i > v:
-            v = i
-    return (v)
+
+def divisible_by_2(mylist=[]):
+    multi = []
+    for i in range(len(mylist)):
+        if mylist[i] % 2 == 0:
+            multi.append(True)
+        else:
+            multi.append(False)
+
+    return (multi)
