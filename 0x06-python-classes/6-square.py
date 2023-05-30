@@ -1,54 +1,55 @@
 #!/usr/bin/python3
 # 6-square.py
+# Brennan D Baraban <375@holbertonschool.com>
 """Declare a class Square."""
 
 
 class Square:
     """Square Represent"""
 
-    def __init__(self, size=0, posi=(0, 0)):
+    def __init__(self, size=0, position=(0, 0)):
         """New square Initializer.
 
         Args:
             size (int): The size of the square.
-            posi (int, int): The position of the a square.
+            position (int, int): The position of the a square.
         """
         self.size = size
-        self.posi = posi
+        self.position = position
 
     @property
     def size(self):
-        """Set/Get the presemt square size."""
+        """Setter/Getter the presemt square size."""
         return (self.__size)
 
     @size.setter
-    def size(self, value):
-        if not isinstance(value, int):
-            raise TypeError("size must be an integer")
-        elif value < 0:
-            raise ValueError("size must be >= 0")
-        self.__size = value
+    def size(self, nx):
+        if not isinstance(nx, int):
+            raise TypeError("size required to be integer")
+        elif nx < 0:
+            raise ValueError("size required to be >= 0")
+        self.__size = nx
 
     @property
-    def posi(self):
-        """Get/set the current posi of the square."""
+    def position(self):
+        """Getter/Setter the present position of the square."""
         return (self.__position)
 
-    @posi.setter
-    def posi(self, value):
-        if (not isinstance(value, tuple) or
-                len(value) != 2 or
-                not all(isinstance(num, int) for num in value) or
-                not all(num >= 0 for num in value)):
-            raise TypeError("posi must be a tuple of 2 positive integers")
-        self.__position = value
+    @position.setter
+    def position(self, nx):
+        if (not isinstance(nx, tuple) or
+                len(nx) != 2 or
+                not all(isinstance(num, int) for num in nx) or
+                not all(num >= 0 for num in nx)):
+            raise TypeError("must be a tuple of 2 positive int")
+        self.__position = nx
 
     def area(self):
-        """Return the current area of the square."""
+        """Return the present area of the square."""
         return (self.__size * self.__size)
 
     def my_print(self):
-        """Print the square with the # character."""
+        """Print a square with the # character."""
         if self.__size == 0:
             print("")
             return
