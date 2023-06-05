@@ -58,3 +58,12 @@ class Rectangle:
             if i != (self.__height - 1):
                 final.append('\n')
         return ("".join(final))
+
+    def __repr__(self):
+        """the developer representation"""
+        final = "Rectangle(" + str(self.__width)
+        final += ", " + str(self.__height) + ")"
+        return (final)
+
+    def __del__(self):
+        print("Bye rectangle...")
