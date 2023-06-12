@@ -1,10 +1,15 @@
 #!/usr/bin/python3
 # 6-base_geometry.py
+"""
+===================================
+Defines an empty class BaseGeometry.
+===================================
+"""
+
 class BaseGeometry:
-    """BaseGeometry class"""
+    """A Represent base geometry."""
 
-    @classmethod
     def area(self):
-        """method for calculated area"""
-
+        """Un implemented."""
         raise Exception("area() is not implemented")
+
