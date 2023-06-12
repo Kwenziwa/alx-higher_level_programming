@@ -1,9 +1,4 @@
 #!/usr/bin/python3
-
-"""
-A class MyList that inherits from list
-"""
-
 MyList = __import__('1-my_list').MyList
 
 my_list = MyList()
