@@ -6,17 +6,17 @@ Defines a base geometry class BaseGeometry.
 ===================================
 """
 
-
 class BaseGeometry:
-   
+    """Class BaseGeometry """
+
     def area(self):
+        """function for calculated area"""
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
-        """
-        All Action
-        """
-        if type(value) != int:
-            raise TypeError("{} shuould be an integer".format(name))
+        """Function for validate if a num is integer"""
+
+        if type(value) is not int:
+            raise TypeError("{} must be an integer".format(name))
         if value <= 0:
-            raise ValueError("{} should be greater than 0".format(name))
+            raise ValueError("{} must be greater than 0".format(name))
