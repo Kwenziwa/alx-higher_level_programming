@@ -6,13 +6,12 @@ A class MyList that inherits from list
 
 MyList = __import__('1-my_list').MyList
 
-alist = MyList()
-alist.append(1)
-alist.append(4)
-alist.append(2)
-alist.append(3)
-alist.append(5)
-
-print(alist)
-alist.print_sorted()
-print(alist)
+my_list = MyList()
+my_list.append(1)
+my_list.append(4)
+my_list.append(2)
+my_list.append(3)
+my_list.append(5)
+print(my_list)
+my_list.print_sorted()
+print(my_list)
