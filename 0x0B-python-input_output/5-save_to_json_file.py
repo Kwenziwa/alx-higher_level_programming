@@ -12,4 +12,3 @@ def save_to_json_file(my_obj, filename):
     """Writting a object into a text file using JSON representation."""
     with open(filename, "w") as z:
         json.dump(my_obj, z)
-
