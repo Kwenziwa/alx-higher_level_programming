@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 # 7-add_item.py
-""" 
+"""
 ========================================================
 Python list with all argumentst and save them to a file.
 ========================================================
@@ -17,3 +17,4 @@ if __name__ == "__main__":
         all_items = []
     all_items.extend(sys.argv[1:])
     save_to_json_file(all_items, "add_item.json")
+
