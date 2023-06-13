@@ -24,3 +24,4 @@ def pascal_triangle(v):
         tempo.append(1)
         triangles.append(tempo)
     return triangles
+
