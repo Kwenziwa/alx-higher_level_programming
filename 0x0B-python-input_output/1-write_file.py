@@ -7,5 +7,6 @@ File-writting function defined.
 """
 
 def write_file(filename="", text=""):
-    with open(filename, "w", encoding="utf-8") as a_content:
-        return a_content.write(text)
+    """ Writes a string to a text file (UTF8)  """
+    with open(filename, "w", encoding='utf-8') as z:
+        return z.write(text)
