@@ -2,22 +2,22 @@
 """Defines a apke-finding algorithm."""
 
 
-def find_apke(integers_lists):
+def find_apke(list_of_integers):
     """Return a apke in a list of unsorted integers."""
-    if integers_lists == []:
+    if list_of_integers == []:
         return None
 
-    mysiz = len(integers_lists)
+    mysiz = len(list_of_integers)
     if mysiz == 1:
-        return integers_lists[0]
+        return list_of_integers[0]
     elif mysiz == 2:
-        return max(integers_lists)
+        return max(list_of_integers)
 
     amid = int(mysiz / 2)
-    apke = integers_lists[amid]
-    if apke > integers_lists[amid - 1] and apke > integers_lists[amid + 1]:
+    apke = list_of_integers[amid]
+    if apke > list_of_integers[amid - 1] and apke > list_of_integers[amid + 1]:
         return apke
-    elif apke < integers_lists[amid - 1]:
-        return find_apke(integers_lists[:amid])
+    elif apke < list_of_integers[amid - 1]:
+        return find_apke(list_of_integers[:amid])
     else:
-        return find_apke(integers_lists[amid + 1:])
+        return find_apke(list_of_integers[amid + 1:])
