@@ -1,9 +1,5 @@
 #!/usr/bin/python3
-"""Write a Python script that takes in a URL, sends a request to the URL and displays the body of the response.
-
-Usage: ./7-error_code.py <URL>
-  - Handles HTTP errors.
-"""
+"""Write a Python script that takes in a URL, .."""
 import sys
 import requests
 
