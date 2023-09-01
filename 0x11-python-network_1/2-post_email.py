@@ -1,10 +1,5 @@
 #!/usr/bin/python3
-"""Write a Python script that takes in a URL and an email, sends a 
-POST request to the passed URL 
-
-Usage: ./2-post_email.py <URL> <email>
-  - Displays the body of the response.
-"""
+"""Write a Python script that takes in a URL and ..."""
 import sys
 import urllib.parse
 import urllib.request
