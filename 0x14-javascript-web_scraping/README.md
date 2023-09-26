@@ -1,2 +1,2 @@
 0x14. JavaScript - Web scraping
-Structure
+my_file.txt
