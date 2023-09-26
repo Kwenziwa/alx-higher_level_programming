@@ -1,6 +1,4 @@
-#!/usr/bin/node
-const request = require('request');
-
+const request =require("request");
 async function getCompletedTasksByUserId(apiUrl) {
   const response = await request.get(apiUrl);
   const todos = JSON.parse(response.body);
