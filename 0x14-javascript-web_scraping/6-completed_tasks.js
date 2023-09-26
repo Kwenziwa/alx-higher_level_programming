@@ -1,26 +1,36 @@
-#!/usr/bin/node
-
 const request = require('request');
-const url = process.argv[2];
 
-request(url, function (err, response, body) {
-  if (err) {
-    console.log(err);
-  } else if (response.statusCode === 200) {
-    const completed = {};
-    const tasks = JSON.parse(body);
-    for (const i in tasks) {
-      const task = tasks[i];
-      if (task.completed === true) {
-        if (completed[task.userId] === undefined) {
-          completed[task.userId] = 1;
-        } else {
-          completed[task.userId]++;
-        }
+async function getCompletedTasksByUserId(apiUrl) {
+  const response = await request.get(apiUrl);
+  const todos = JSON.parse(response.body);
+
+  const completedTasksByUserId = {};
+  for (const todo of todos) {
+    if (todo.completed) {
+      const userId = todo.userId;
+      if (!completedTasksByUserId[userId]) {
+        completedTasksByUserId[userId] = 0;
       }
+      completedTasksByUserId[userId] += 1;
     }
-    console.log(completed);
-  } else {
-    console.log('An error occured. Status code: ' + response.statusCode);
   }
-});
+
+  return completedTasksByUserId;
+}
+
+async function printUsersWithCompletedTasks(completedTasksByUserId) {
+  for (const userId in completedTasksByUserId) {
+    const numCompletedTasks = completedTasksByUserId[userId];
+    if (numCompletedTasks > 0) {
+      console.log(`User ID: ${userId}, Number of completed tasks: ${numCompletedTasks}`);
+    }
+  }
+}
+
+if (require.main === module) {
+  const apiUrl = 'https://jsonplaceholder.typicode.com/todos';
+
+  const completedTasksByUserId = await getCompletedTasksByUserId(apiUrl);
+
+  await printUsersWithCompletedTasks(completedTasksByUserId);
+}
